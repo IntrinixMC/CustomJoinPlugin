@@ -1,0 +1,2 @@
+join-message: '&a[ + ] %player%'
+leave-message: '&4[ - ] %player%'

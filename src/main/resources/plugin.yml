@@ -1,0 +1,6 @@
+name: CustomJoinMessages
+version: '${version}'
+main: me.intrinix.customjoinplugin.CustomJoinPlugin
+api-version: 1.17
+authors: [ Intrinix ]
+description: A simple plugin that allows you to customize the join and leave messages
