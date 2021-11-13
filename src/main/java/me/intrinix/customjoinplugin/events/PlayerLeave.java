@@ -20,28 +20,20 @@ public class PlayerLeave implements Listener {
     public void onPlayerLeave(PlayerQuitEvent event){
         Player player = event.getPlayer();
 
-        String defaultQuitMessage = "[ + ] %player%";
-        defaultQuitMessage = defaultQuitMessage.replaceAll("%player%", player.getDisplayName());
-
         String newQuitMessage = plugin.getConfig().getString("leave-message");
 
         if(newQuitMessage != null)
         {
             newQuitMessage = newQuitMessage.trim();
             newQuitMessage = ChatColor.translateAlternateColorCodes('&', newQuitMessage);
-
-            if(newQuitMessage.contains("%player%"))
-            {
-                newQuitMessage = newQuitMessage.replaceAll("%player%", player.getDisplayName());
-            }
-
+            newQuitMessage = newQuitMessage.replaceAll("%player%", player.getDisplayName());
             if(!newQuitMessage.isEmpty())
             {
                 event.setQuitMessage(newQuitMessage);
             }
             else
             {
-                event.setQuitMessage(defaultQuitMessage);
+                event.setQuitMessage(ChatColor.DARK_RED + "[ + ] " + player.getDisplayName());
             }
         }
 

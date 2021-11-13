@@ -25,9 +25,6 @@ public class PlayerJoin implements Listener
     {
         Player player = event.getPlayer();
 
-        String defaultJoinMessage = "[ + ] %player%";
-        defaultJoinMessage = defaultJoinMessage.replaceAll("%player%", player.getDisplayName());
-
         String newJoinMessage = plugin.getConfig().getString("join-message");
 
         if(newJoinMessage != null)
@@ -47,7 +44,7 @@ public class PlayerJoin implements Listener
             }
             else
             {
-                event.setJoinMessage(defaultJoinMessage);
+                event.setJoinMessage(ChatColor.GREEN + "[ + ] " + player.getDisplayName());
             }
         }
 
